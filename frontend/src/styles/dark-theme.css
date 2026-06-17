@@ -1,0 +1,77 @@
+/* ===== Dark Theme ===== */
+.dark {
+  /* Brand Colors */
+  --color-brand-primary: #3b82f6;
+  --color-brand-hover: #60a5fa;
+  --color-brand-deep: #2563eb;
+  --color-brand-light: #1e3a5f;
+  --color-brand-muted: #1e40af;
+
+  /* Background Colors */
+  --color-bg-page: #0f172a;
+  --color-bg-muted: #1e293b;
+  --color-bg-card: #1e293b;
+  --color-bg-elevated: #334155;
+  --color-bg-hover: #334155;
+  --color-bg-active: #475569;
+
+  /* Text Colors */
+  --color-text-primary: #f8fafc;
+  --color-text-secondary: #cbd5e1;
+  --color-text-muted: #64748b;
+  --color-text-inverse: #0f172a;
+
+  /* Border Colors */
+  --color-border-default: #334155;
+  --color-border-muted: #1e293b;
+  --color-border-strong: #475569;
+
+  /* Status Colors */
+  --color-success: #34d399;
+  --color-success-bg: #064e3b;
+  --color-success-text: #a7f3d0;
+
+  --color-warning: #fbbf24;
+  --color-warning-bg: #78350f;
+  --color-warning-text: #fef3c7;
+
+  --color-error: #f87171;
+  --color-error-bg: #7f1d1d;
+  --color-error-text: #fecaca;
+
+  --color-info: #60a5fa;
+  --color-info-bg: #1e3a5f;
+  --color-info-text: #bfdbfe;
+
+  /* Seat Status Colors */
+  --color-seat-available: #34d399;
+  --color-seat-available-bg: #064e3b;
+  --color-seat-booked: #fbbf24;
+  --color-seat-booked-bg: #78350f;
+  --color-seat-busy: #f87171;
+  --color-seat-busy-bg: #7f1d1d;
+
+  /* Shadow Colors */
+  --color-shadow-sm: rgba(0, 0, 0, 0.3);
+  --color-shadow-md: rgba(0, 0, 0, 0.4);
+  --color-shadow-lg: rgba(0, 0, 0, 0.5);
+  --color-shadow-brand: rgba(59, 130, 246, 0.3);
+
+  /* Scrollbar */
+  --color-scrollbar-thumb: #475569;
+  --color-scrollbar-track: transparent;
+
+  /* Timetable Block Colors - 다크모드용 밝은 파스텔 */
+  --color-block-0-bg: #dbeafe;
+  --color-block-0-border: #3b82f6;
+  --color-block-1-bg: #ede9fe;
+  --color-block-1-border: #8b5cf6;
+  --color-block-2-bg: #fce7f3;
+  --color-block-2-border: #ec4899;
+  --color-block-3-bg: #ffedd5;
+  --color-block-3-border: #f97316;
+  --color-block-4-bg: #ccfbf1;
+  --color-block-4-border: #14b8a6;
+  --color-block-5-bg: #fef9c3;
+  --color-block-5-border: #eab308;
+}

@@ -1,0 +1,25 @@
+---
+description: StudIt monorepo conventions (React CRiT-style frontend + Spring Boot)
+alwaysApply: true
+---
+
+# StudIt project rules
+
+Before editing code, read **AGENTS.md** at the repository root.
+
+## Frontend (required)
+
+- Structure: `pages/<feature>/index.tsx`, `routes/routes.tsx`, `api/command.ts`, `stores/`, `mocks/data/`
+- Use `@/` imports. API calls only via `@/api/command`, not raw `fetch` or `axios` in pages.
+- Auth: `useAuthStore` from `@/stores/authStore`. Protected routes: `PrivateRoute` from `@/routes/privateRoute`.
+- MSW: handlers in `mocks/handlers.ts`, data in `mocks/data/`. Do not edit `public/mockServiceWorker.js`.
+- Env: `VITE_SERVER_URL`, `VITE_USE_MOCK`.
+
+## Backend
+
+- Spring Boot under `backend/`, REST under `/api`, Java package `com.studit`.
+
+## Do not
+
+- Reintroduce Django `source_code/` or flat `pages/FooPage.tsx` at src root.
+- Commit `frontend/.env` secrets.

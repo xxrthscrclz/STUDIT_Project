@@ -1,0 +1,101 @@
+@import 'tailwindcss';
+@import './styles/light-theme.css';
+@import './styles/dark-theme.css';
+@import './styles/theme-utilities.css';
+
+@theme {
+  --color-primary: var(--color-brand-primary);
+  --color-black: #000000;
+  --color-white: #ffffff;
+
+  /* Brand */
+  --color-brand-primary: var(--color-brand-primary);
+  --color-brand-hover: var(--color-brand-hover);
+  --color-brand-deep: var(--color-brand-deep);
+  --color-brand-light: var(--color-brand-light);
+  --color-brand-muted: var(--color-brand-muted);
+
+  /* Background */
+  --color-bg-page: var(--color-bg-page);
+  --color-bg-muted: var(--color-bg-muted);
+  --color-bg-card: var(--color-bg-card);
+  --color-bg-elevated: var(--color-bg-elevated);
+  --color-bg-hover: var(--color-bg-hover);
+  --color-bg-active: var(--color-bg-active);
+
+  /* Text */
+  --color-text-primary: var(--color-text-primary);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-text-muted: var(--color-text-muted);
+  --color-text-inverse: var(--color-text-inverse);
+
+  /* Border */
+  --color-border: var(--color-border-default);
+  --color-border-default: var(--color-border-default);
+  --color-border-muted: var(--color-border-muted);
+  --color-border-strong: var(--color-border-strong);
+
+  /* Status */
+  --color-status-success: var(--color-success);
+  --color-status-success-bg: var(--color-success-bg);
+  --color-status-success-text: var(--color-success-text);
+  --color-status-warning: var(--color-warning);
+  --color-status-warning-bg: var(--color-warning-bg);
+  --color-status-warning-text: var(--color-warning-text);
+  --color-status-error: var(--color-error);
+  --color-status-error-bg: var(--color-error-bg);
+  --color-status-error-text: var(--color-error-text);
+  --color-status-info: var(--color-info);
+  --color-status-info-bg: var(--color-info-bg);
+  --color-status-info-text: var(--color-info-text);
+
+  /* Seat */
+  --color-seat-available: var(--color-seat-available);
+  --color-seat-available-bg: var(--color-seat-available-bg);
+  --color-seat-booked: var(--color-seat-booked);
+  --color-seat-booked-bg: var(--color-seat-booked-bg);
+  --color-seat-busy: var(--color-seat-busy);
+  --color-seat-busy-bg: var(--color-seat-busy-bg);
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family:
+      'Pretendard',
+      -apple-system,
+      BlinkMacSystemFont,
+      'Segoe UI',
+      Roboto,
+      sans-serif;
+    background-color: var(--color-bg-page);
+    color: var(--color-text-primary);
+    letter-spacing: 0;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  button {
+    font-family: inherit;
+  }
+}

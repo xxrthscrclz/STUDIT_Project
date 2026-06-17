@@ -1,0 +1,27 @@
+{
+  "name": "studit-monorepo",
+  "private": true,
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ],
+    "ignoredBuiltDependencies": [
+      "esbuild"
+    ]
+  },
+  "scripts": {
+    "dev:frontend": "pnpm --filter frontend dev",
+    "dev:backend": "cd backend && ./gradlew bootRun",
+    "build:frontend": "pnpm --filter frontend build",
+    "build:backend": "cd backend && ./gradlew build -x test",
+    "lint": "pnpm -r lint",
+    "format": "pnpm -r format",
+    "format:check": "pnpm -r format:check"
+  },
+  "devDependencies": {
+    "@frontend/eslint-config": "github:xxrthscrclz/eslint-prettier-configs#main",
+    "@frontend/prettier-config": "github:xxrthscrclz/eslint-prettier-configs#main",
+    "eslint": "^9.17.0",
+    "prettier": "^3.4.2"
+  }
+}
