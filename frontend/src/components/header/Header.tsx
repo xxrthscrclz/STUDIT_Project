@@ -21,7 +21,7 @@ export function Header() {
   `;
 
   return (
-    <nav className="bg-gradient-to-r from-brand-primary to-brand-deep text-text-inverse shadow-md">
+    <nav className="sticky top-0 z-50 bg-gradient-to-r from-brand-primary to-brand-deep text-text-inverse shadow-md">
       <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3">
         <div
           className="cursor-pointer text-xl font-bold tracking-tight transition-opacity hover:opacity-80"

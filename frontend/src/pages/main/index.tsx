@@ -27,16 +27,16 @@ export default function MainPage() {
   return (
     <div className="space-y-8">
       {/* Hero Section */}
-      <section className="animate-fade-in-up rounded-[20px] bg-gradient-to-br from-brand-primary to-brand-deep p-8 text-white shadow-lg">
+      <section className="animate-fade-in-up rounded-[20px] bg-linear-to-br from-brand-primary to-brand-deep p-8 text-white shadow-lg">
         <h1 className="typo-title2">
           StudIt <span className="typo-body1 font-normal opacity-80">Study It</span>
         </h1>
-        <p className="mt-3 typo-body2 opacity-90 max-w-lg">
+        <div className="flex w-full mt-3 typo-body2 opacity-90">
           수업 시간표와 겹치지 않게, 스터디룸 좌석을 예약하고 더 나은 공부 환경을 만드세요.
-        </p>
+        </div>
         <div className="mt-6 flex flex-wrap gap-3">
           <button
-            className="rounded-[12px] border-2 border-white bg-white px-6 py-3 text-base font-medium text-[#0d6efd] transition-all duration-200 hover:bg-white/90 active:scale-[0.98]"
+            className="rounded-[12px] border-2 border-white bg-white px-6 py-3 text-base font-medium text-brand-primary transition-all duration-200 hover:bg-white/90 active:scale-[0.98] dark:border-transparent dark:bg-bg-card dark:text-white dark:hover:bg-bg-elevated"
             onClick={() => navigate('/rooms')}
           >
             스터디룸 보러가기

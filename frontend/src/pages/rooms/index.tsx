@@ -38,7 +38,7 @@ export default function RoomsPage() {
             <Card
               key={room.id}
               hover
-              className="animate-fade-in-up cursor-pointer"
+              className="animate-fade-in-up cursor-pointer flex flex-col"
               style={{ animationDelay: `${index * 0.05}s` } as React.CSSProperties}
               onClick={() => navigate(`/rooms/${room.id}`)}
             >
@@ -55,20 +55,22 @@ export default function RoomsPage() {
                 </div>
               </div>
 
-              <div className="mt-4 flex items-center justify-between border-t border-border-muted pt-4">
-                <div className="typo-label text-text-muted">사용 가능</div>
-                <div className="flex items-center gap-1">
-                  <span className="typo-body-bold text-brand-primary">{room.availableSeats}</span>
-                  <span className="typo-body3 text-text-muted">/ {room.totalSeats}석</span>
+              <div className="mt-auto pt-4">
+                <div className="flex items-center justify-between border-t border-border-muted pt-4">
+                  <div className="typo-label text-text-muted">사용 가능</div>
+                  <div className="flex items-center gap-1">
+                    <span className="typo-body-bold text-brand-primary">{room.availableSeats}</span>
+                    <span className="typo-body3 text-text-muted">/ {room.totalSeats}석</span>
+                  </div>
                 </div>
-              </div>
 
-              <div className="mt-3">
-                <div className="h-2 w-full overflow-hidden rounded-full bg-bg-muted">
-                  <div
-                    className="h-full rounded-full bg-brand-primary transition-all duration-500"
-                    style={{ width: `${(room.availableSeats / room.totalSeats) * 100}%` }}
-                  />
+                <div className="mt-3">
+                  <div className="h-2 w-full overflow-hidden rounded-full bg-bg-muted">
+                    <div
+                      className="h-full rounded-full bg-brand-primary transition-all duration-500"
+                      style={{ width: `${(room.availableSeats / room.totalSeats) * 100}%` }}
+                    />
+                  </div>
                 </div>
               </div>
             </Card>
