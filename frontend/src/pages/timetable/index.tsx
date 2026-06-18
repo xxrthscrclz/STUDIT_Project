@@ -11,9 +11,7 @@ type GroupedSchedule = {
   schedules: { id: number; dayLabel: string; startTime: string; endTime: string }[];
 };
 
-function groupSchedulesBySubject(
-  schedules: TimetableResponse['schedules'],
-): GroupedSchedule[] {
+function groupSchedulesBySubject(schedules: TimetableResponse['schedules']): GroupedSchedule[] {
   const map = new Map<string, GroupedSchedule>();
 
   for (const s of schedules) {
@@ -103,9 +101,13 @@ export default function TimetablePage() {
                 >
                   <div className="flex items-start justify-between gap-3 flex-1">
                     <div className="flex-1 min-w-0">
-                      <p className="typo-body-bold text-text-primary truncate">{group.subjectName}</p>
+                      <p className="typo-body-bold text-text-primary truncate">
+                        {group.subjectName}
+                      </p>
                       {group.location && (
-                        <p className="typo-caption text-text-muted mt-0.5 truncate">{group.location}</p>
+                        <p className="typo-caption text-text-muted mt-0.5 truncate">
+                          {group.location}
+                        </p>
                       )}
                       <div className="mt-2 flex flex-wrap gap-1.5">
                         {group.schedules.map((s) => (

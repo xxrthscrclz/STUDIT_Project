@@ -3,7 +3,8 @@ import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { getSeatTimeline, postReservation, type SeatTimelineResponse } from '@/api/command';
 import { ApiRequestError } from '@/api/errors';
 import { WeeklyGrid as WeeklyGridView } from '@/components/timetable/WeeklyGrid';
-import { Alert, Badge, Button, Card, Input, LoadingState } from '@/components/ui';
+import { Alert, Badge, Button, Card, LoadingState } from '@/components/ui';
+import { DatePicker, TimePicker } from '@/components/ui/DatePicker';
 
 function todayIso() {
   return new Date().toISOString().slice(0, 10);
@@ -91,40 +92,24 @@ export default function ReservationCreatePage() {
         {/* 왼쪽: 예약 정보 + 시간대별 현황 */}
         <div className="space-y-4">
           <Card className="animate-fade-in-up">
-            <h2 className="typo-body-bold text-text-primary mb-3">예약 정보</h2>
-            <form onSubmit={handleSubmit} className="space-y-3">
+            <h2 className="typo-body-bold text-text-primary mb-4">예약 정보</h2>
+            <form onSubmit={handleSubmit} className="space-y-4">
               {error && <Alert tone="error">{error}</Alert>}
               {success && <Alert tone="success">{success}</Alert>}
 
-              <div className="grid gap-3 grid-cols-3">
-                <div>
-                  <label className="mb-1.5 block typo-label text-text-secondary">날짜</label>
-                  <Input
-                    type="date"
-                    value={date}
-                    min={todayIso()}
-                    onChange={(e) => setDate(e.target.value)}
-                    required
-                  />
-                </div>
-                <div>
-                  <label className="mb-1.5 block typo-label text-text-secondary">시작</label>
-                  <Input
-                    type="time"
-                    value={startTime}
-                    onChange={(e) => setStartTime(e.target.value)}
-                    required
-                  />
-                </div>
-                <div>
-                  <label className="mb-1.5 block typo-label text-text-secondary">종료</label>
-                  <Input
-                    type="time"
-                    value={endTime}
-                    onChange={(e) => setEndTime(e.target.value)}
-                    required
-                  />
-                </div>
+              <div>
+                <label className="mb-2 block typo-label text-text-secondary">날짜</label>
+                <DatePicker value={date} onChange={setDate} minDate={todayIso()} />
+              </div>
+
+              <div>
+                <label className="mb-2 block typo-label text-text-secondary">시작 시간</label>
+                <TimePicker value={startTime} onChange={setStartTime} />
+              </div>
+
+              <div>
+                <label className="mb-2 block typo-label text-text-secondary">종료 시간</label>
+                <TimePicker value={endTime} onChange={setEndTime} />
               </div>
 
               <Button type="submit" disabled={submitting} className="w-full">
@@ -146,7 +131,7 @@ export default function ReservationCreatePage() {
                       ? 'border-border-muted bg-bg-card hover:bg-bg-hover'
                       : slot.isMine
                         ? 'border-brand-primary bg-brand-light'
-                        : 'border-status-warning bg-status-warning-bg'
+                        : 'border-border-strong bg-bg-muted'
                   }`}
                 >
                   <span className="typo-caption text-text-primary">
@@ -155,7 +140,7 @@ export default function ReservationCreatePage() {
                   {slot.status === 'free' ? (
                     <Badge variant="success">비어 있음</Badge>
                   ) : (
-                    <Badge variant={slot.isMine ? 'info' : 'warning'}>
+                    <Badge variant={slot.isMine ? 'info' : 'default'}>
                       {slot.isMine ? '내 예약' : (slot.userName ?? '예약됨')}
                     </Badge>
                   )}

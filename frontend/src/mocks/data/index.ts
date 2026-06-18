@@ -108,9 +108,9 @@ export const seatNumbersByRoom: Record<number, string[]> = {
 export const seatNumbers = seatNumbersByRoom[1];
 
 export let users: MockUser[] = [
-  { id: 1, username: 'jooho0813', password: '' },
-  { id: 2, username: 'demo', password: '' },
-  { id: 3, username: 'student2', password: '' },
+  { id: 1, username: '홍길동', password: '' },
+  { id: 2, username: '이익준', password: '' },
+  { id: 3, username: '김철수', password: '' },
 ];
 
 let nextUserId = 4;

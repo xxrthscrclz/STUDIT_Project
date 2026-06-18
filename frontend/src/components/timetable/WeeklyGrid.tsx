@@ -32,7 +32,9 @@ export function WeeklyGrid({ grid, compact, className }: Props) {
   }
 
   return (
-    <div className={`animate-fade-in overflow-x-auto rounded-[16px] border border-border bg-bg-card ${className ?? ''}`}>
+    <div
+      className={`animate-fade-in overflow-x-auto rounded-[16px] border border-border bg-bg-card ${className ?? ''}`}
+    >
       <div
         className="grid min-w-[640px]"
         style={{ gridTemplateColumns: `56px repeat(${grid.days.length}, 1fr)` }}
@@ -90,8 +92,8 @@ export function WeeklyGrid({ grid, compact, className }: Props) {
                   }}
                   title={`${block.subjectName} ${block.startTime}~${block.endTime}`}
                 >
-                  <div className="font-semibold text-text-primary truncate">{block.subjectName}</div>
-                  <div className="text-text-secondary truncate">
+                  <div className="font-semibold text-slate-800 truncate">{block.subjectName}</div>
+                  <div className="text-slate-600 truncate">
                     {block.startTime}~{block.endTime}
                   </div>
                 </div>

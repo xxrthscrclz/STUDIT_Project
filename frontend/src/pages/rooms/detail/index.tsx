@@ -104,9 +104,10 @@ export default function RoomDetailPage() {
                 <span
                   className={`
                     typo-label px-2 py-1 rounded-[6px]
-                    ${isAvailable
-                      ? 'bg-status-success-bg text-status-success-text'
-                      : 'bg-status-error-bg text-status-error-text'
+                    ${
+                      isAvailable
+                        ? 'bg-status-success-bg text-status-success-text'
+                        : 'bg-status-error-bg text-status-error-text'
                     }
                   `}
                 >
@@ -135,7 +136,9 @@ export default function RoomDetailPage() {
                   variant="outline"
                   size="sm"
                   className="mt-4 w-full"
-                  onClick={() => navigate(`/reservations/create/${seat.id}?date=${room.selectedDate}`)}
+                  onClick={() =>
+                    navigate(`/reservations/create/${seat.id}?date=${room.selectedDate}`)
+                  }
                 >
                   예약하기
                 </Button>

@@ -5,6 +5,7 @@ import { ApiRequestError } from '@/api/errors';
 import type { WeeklyGrid } from '@/api/types';
 import { WeeklyGrid as WeeklyGridView } from '@/components/timetable/WeeklyGrid';
 import { Alert, Button, Card, Input } from '@/components/ui';
+import { TimePicker } from '@/components/ui/DatePicker';
 
 const DAYS = [
   { value: 0, label: '월' },
@@ -120,22 +121,12 @@ export default function TimetableAddPage() {
             <div className="grid gap-4 sm:grid-cols-2">
               <div>
                 <label className="mb-2 block typo-label text-text-secondary">시작 시간</label>
-                <Input
-                  type="time"
-                  value={startTime}
-                  onChange={(e) => setStartTime(e.target.value)}
-                  required
-                />
+                <TimePicker value={startTime} onChange={setStartTime} />
               </div>
 
               <div>
                 <label className="mb-2 block typo-label text-text-secondary">종료 시간</label>
-                <Input
-                  type="time"
-                  value={endTime}
-                  onChange={(e) => setEndTime(e.target.value)}
-                  required
-                />
+                <TimePicker value={endTime} onChange={setEndTime} />
               </div>
             </div>
 
